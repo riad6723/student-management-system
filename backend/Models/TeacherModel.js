@@ -14,7 +14,9 @@ const TeacherSchema = new mongoose.Schema({
     type: String,
     required: true,
   }
-});
+},
+  { timestamps: true }
+);
 
 const Teacher = mongoose.model('Teacher', TeacherSchema);
 module.exports = Teacher;
