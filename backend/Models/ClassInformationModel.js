@@ -16,8 +16,14 @@ const ClassInformationSchema = new mongoose.Schema({
   classDesc: {
     type: String,
     required: false,
+  },
+  teacherID:{
+    type: String,
+    required:true,
   }
-});
+},
+{timestamps:true}
+);
 
 const ClassInformation = mongoose.model('ClassInformation', ClassInformationSchema);
 module.exports = ClassInformation;

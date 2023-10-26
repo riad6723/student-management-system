@@ -14,7 +14,9 @@ const StudentSchema = new mongoose.Schema({
     type: String,
     required: true,
   }
-});
+},
+{timestamps:true}
+);
 
 const Student = mongoose.model('Student', StudentSchema);
 module.exports = Student;

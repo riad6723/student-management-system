@@ -8,8 +8,14 @@ const ClassStudentSchema = new mongoose.Schema({
   classID: {
     type: String,
     required: true,
+  },
+  studentName:{
+    type: String,
+    required: true,
   }
-});
+},
+{timestamps:true}
+);
 
 const ClassStudent = mongoose.model('ClassStudent', ClassStudentSchema);
 module.exports = ClassStudent;
