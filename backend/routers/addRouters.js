@@ -3,8 +3,8 @@ const router = express.Router();
 const {checkToken,checkUser} =require('../middlewares/authentication');
 const {handleAddClassTeacher,handleAddClassStudent}= require('../controllers/addControllers')
 
-router.post('/addClassTeacher',checkToken,checkUser,handleAddClassTeacher);
-router.post('/addClassStudent',checkToken,checkUser,handleAddClassStudent);
+router.post('/classTeacher',checkToken,checkUser,handleAddClassTeacher);
+router.post('/classStudent',checkToken,checkUser,handleAddClassStudent);
 
 
 module.exports={addRouters : router};

@@ -26,7 +26,6 @@ mongoose
   .catch((err)=>console.log(err));
 
 
-  //app.use('/api/user',checkToken);
   app.use('/api/add',addRouters);
   app.use('/api/create',createRouters);
   app.use('/api/register',registerRouters);

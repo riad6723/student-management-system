@@ -16,6 +16,10 @@ const PostsSchema = new mongoose.Schema({
   postDesc:{
     type: String,
     required: false
+  },
+  postImage:{
+    type: String,
+    required:false,
   }
 },
 {timestamps:true}
