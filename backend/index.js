@@ -4,7 +4,10 @@ const mongoose=require('mongoose');
 const cors = require('cors'); 
 const dotenv=require('dotenv');
 dotenv.config();
-const {userRouters}=require('./routers/userRouters');
+const {addRouters}=require('./routers/addRouters');
+const {createRouters}=require('./routers/createRouters');
+const {loginRouters}=require('./routers/loginRouters');
+const {registerRouters}=require('./routers/registerRouters');
 
 app.use(express.json());
 app.use(express.static('Public'))
@@ -24,7 +27,10 @@ mongoose
 
 
   //app.use('/api/user',checkToken);
-  app.use('/api/user',userRouters);
+  app.use('/api/add',addRouters);
+  app.use('/api/create',createRouters);
+  app.use('/api/register',registerRouters);
+  app.use('/api/login',loginRouters);
 
 
 app.listen(5000,()=>{
