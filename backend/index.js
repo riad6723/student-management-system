@@ -7,12 +7,12 @@ dotenv.config();
 const {userRouters}=require('./routers/userRouters');
 
 app.use(express.json());
+app.use(express.static('Public'))
 app.use(cors({
   origin: ["http://localhost:3000"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }))
-app.use(express.static('Public'))
 
 
 mongoose
@@ -23,6 +23,7 @@ mongoose
   .catch((err)=>console.log(err));
 
 
+  //app.use('/api/user',checkToken);
   app.use('/api/user',userRouters);
 
 
