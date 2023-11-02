@@ -11,6 +11,7 @@ const {registerRouters}=require('./routers/registerRouters');
 
 app.use(express.json());
 app.use(express.static('Public'))
+app.use(express.urlencoded({extended:false}))
 app.use(cors({
   origin: ["http://localhost:3000"],
   methods: ["GET", "POST", "PUT", "DELETE"],
@@ -30,7 +31,7 @@ mongoose
   app.use('/api/create',createRouters);
   app.use('/api/register',registerRouters);
   app.use('/api/login',loginRouters);
-
+  //app.get('/api/demo',(req,res)=>{res.send({msg:"hello"})});
 
 app.listen(5000,()=>{
     console.log('server running at port 5000')
